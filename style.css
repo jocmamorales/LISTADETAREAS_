@@ -1,10 +1,13 @@
 body {
-    margin: 0;
+    margin: 10;
     padding: 0;
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif; /**/
-    line-height: 1.5; /*interlineado*/
-    background-color: lightgreen; /**/
+    font-family: Arial, Helvetica, sans-serif;
+    /**/
+    line-height: 1.5;
+    /*interlineado*/
+    background-color: lightgreen;
+    /**/
     color: white;
 }
 
@@ -13,10 +16,12 @@ h1 {
     color: darkslategrey;
 }
 
-.container{
-    margin-top: 30p ;
-    margin-bottom: 30px; /**/
-    width: 30%; /*ACA ESTABLECE EL ANCHO*/
+.container {
+    margin-top: 30p;
+    margin-bottom: 30px;
+    /**/
+    width: 30%;
+    /*ACA ESTABLECE EL ANCHO*/
     margin-left: auto;
     margin-right: auto;
     background-color: white;
@@ -24,7 +29,7 @@ h1 {
 
 }
 
-.tareas{
+.tareasList {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -32,6 +37,7 @@ h1 {
 
 form {
     display: flex;
+    justify-content: center;     
 }
 
 input {
@@ -39,36 +45,55 @@ input {
     width: 300px;
     outline: none;
 }
+
 .btn-add {
     padding: 5px 15px;
     color: white;
-    border: none; /*none le quita la propiedad*/
+    border: none;
+    /*none le quita la propiedad*/
     font-family: fantasy;
     background-color: blue;
     font-size: 1.4rem;
     outline: none;
 }
+
 .empty {
     color: darkslategrey;
+    justify-content: center;
 }
 
-ul  {
+ul {
     padding: 0;
 }
 
 li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(247, 240, 242);
+    margin: 8px auto;
+    max-width: 340px;
 
 }
 
 /*el li p se agrega por herencia*/
 li p {
-
+    display: inline;
+    color: black;
+    padding-left: 7px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-.btn-delete{
+.btn-delete {
     padding: 5px 15px;
     color: white;
-    border: none; /*none le quita la propiedad*/
+    border: none;
+    /*none le quita la propiedad*/
     font-family: fantasy;
     background-color: red;
     font-size: 1.4rem;

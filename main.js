@@ -1,34 +1,51 @@
-const input = document.querySelector("input"); /*aca llamo al elemento input*/
-const addBtn = document.querySelector(".btn-add"); /*aca llamo a la clase */
+
+const input = document.querySelector("input");
+const addBtn = document.querySelector(".btn-add");
 const ul = document.querySelector("ul");
 const empty = document.querySelector(".empty");
 
-addBtn.addEventListener("click", (e) =>{
-e.preventDefault();
+addBtn.addEventListener("click", (e) => {
+        e.preventDefault();
 
-const text = input.value;
-if(text !== "")
+        const text = input.value;
+        if (text !== "") {
+                const li = document.createElement("li");
+                const p = document.createElement("p");
 
-const li= document.createElement("li");
-const p= document.createElement("p");
+                p.textContent = text;
+                li.appendChild(p);
+                li.appendChild(addDeleteBtn());
+                ul.appendChild(li);
 
-p.textContent =  text;
-li.appendChild(p);
-ul.appendChild(li);
-li.appendChild(addDeleteBtn());
+                input.value = "";
+        }
 
-input.value ="";
-empty.style.display="none";
-
-
+        // Comprobar si la lista de tareas está vacía y mostrar el mensaje correspondiente
+        const items = ul.querySelectorAll("li");
+        if (items.length === 0) {
+                empty.style.display = "block";
+        } else {
+                empty.style.display = "none";
+        }
 });
 
-function addDeleteBtn(){
+function addDeleteBtn() {
+        const deleteBtn = document.createElement("button");
 
-        const addDeleteBtn = document.querySelector("button");
+        deleteBtn.textContent = "x";
+        deleteBtn.className = "btn-delete";
+        deleteBtn.addEventListener("click", (e) => {
+                const li = e.target.parentElement;
+                ul.removeChild(li);
 
-        deleteBtn.textContent = "X";
-        deleteBtn.className ="btn-delete";
+                // Comprobar si la lista de tareas está vacía y mostrar el mensaje correspondiente
+                const items = ul.querySelectorAll("li");
+                if (items.length === 0) {
+                        empty.style.display = "block";
+                } else {
+                        empty.style.display = "none";
+                }
+        });
 
-        /*longitud igual a 0*/
+        return deleteBtn;
 }
