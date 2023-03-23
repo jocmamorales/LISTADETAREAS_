@@ -1,3 +1,5 @@
-# LISTADETAREAS_
+# LISTA DE TAREAS
+### .Html-css-js
 
-https://jocmamorales.github.io/LISTADETAREAS_/
+Enlace del proyecto:
+## https://jocmamorales.github.io/LISTADETAREAS_/
