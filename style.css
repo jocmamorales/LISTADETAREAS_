@@ -1,5 +1,6 @@
 body {
     margin: 10;
+    display: flex;
     padding: 0;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
@@ -19,7 +20,7 @@ h1 {
 .container {
     margin-top: 30p;
     margin-bottom: 30px;
-    /**/
+    /**/   
     width: 30%;
     /*ACA ESTABLECE EL ANCHO*/
     margin-left: auto;
@@ -98,8 +99,24 @@ li p {
     border-radius: 10px;
     /*none le quita la propiedad*/
     font-family: fantasy;
-    background-color: red;
+    background-color: green;
     font-size: 2rem;
     outline: none;
 }
+.btn-delete:hover {
+    background-color: red;
+  }
 
+.btn-mostrar-borradas {
+    background-color: #319b00;
+    color: #fff;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .btn-mostrar-borradas:hover {
+    background-color: #0edf18;
+  }

@@ -4,6 +4,9 @@ const addBtn = document.querySelector(".btn-add");
 const ul = document.querySelector("ul");
 const empty = document.querySelector(".empty");
 
+const btnMostrarBorradas = document.querySelector(".btn-mostrar-borradas");
+
+
 addBtn.addEventListener("click", (e) => {
         e.preventDefault();
 
@@ -21,12 +24,7 @@ addBtn.addEventListener("click", (e) => {
         }
 
         // Comprobar si la lista de tareas está vacía y mostrar el mensaje correspondiente
-        const items = ul.querySelectorAll("li");
-        if (items.length === 0) {
-                empty.style.display = "block";
-        } else {
-                empty.style.display = "none";
-        }
+        listaVacia();
 });
 
 function addDeleteBtn() {
@@ -38,14 +36,20 @@ function addDeleteBtn() {
                 const li = e.target.parentElement;
                 ul.removeChild(li);
 
+              
                 // Comprobar si la lista de tareas está vacía y mostrar el mensaje correspondiente
-                const items = ul.querySelectorAll("li");
-                if (items.length === 0) {
-                        empty.style.display = "block";
-                } else {
-                        empty.style.display = "none";
-                }
+               listaVacia();
         });
 
         return deleteBtn;
 }
+
+function listaVacia() {
+        const items = ul.querySelectorAll("li");
+        if (items.length === 0) {
+          empty.style.display = "block";
+        } else {
+          empty.style.display = "none";
+        }
+      }
+      
